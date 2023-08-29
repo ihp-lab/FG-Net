@@ -1,0 +1,15 @@
+{
+  "batch_size": 32,
+  "dataset": "BP4D",
+  "dim": 128,
+  "num_labels": 12,
+  "sigma": 20.0,
+  "image_path": "../data/",
+  "train_csv": "../data/BP4D/labels/0/train.csv",
+  "test_csv": "../data/BP4D/labels/0/test.csv",
+  "stylegan_checkpoint": "checkpoints/stylegan2-ffhq-config-f.pt",
+  "style_encoder_path": "checkpoints/encoder.pt",
+  "checkpoint_path": "checkpoints/disfa_0/model.pth",
+  "dropout": 0.1,
+  "seed": 0
+}

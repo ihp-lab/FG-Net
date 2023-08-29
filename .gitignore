@@ -1,2 +1,10 @@
 __pycache__
-checkpoints
+
+# data
+data/BP4D/aligned_images
+data/BP4D/aligned_landmarks
+data/DISFA/aligned_images
+data/DISFA/aligned_landmarks
+
+# checkpoints
+code/checkpoints
