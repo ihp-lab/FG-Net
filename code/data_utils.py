@@ -200,7 +200,7 @@ class MyDataset(Dataset):
 		label = torch.FloatTensor(label)
 
 		if self.type == 'train':
-			heatmap = au2heatmap(image_path, label, self.args['dim'][0], self.args['sigma'], self.args) # [x,128,128]
+			heatmap = au2heatmap(image_path, label, self.args['dim'], self.args['sigma'], self.args) # [x,128,128]
 			heatmap = torch.from_numpy(heatmap)
 
 			return image, label, heatmap

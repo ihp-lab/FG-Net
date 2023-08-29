@@ -83,8 +83,7 @@ def main(args):
 							shuffle=False, collate_fn=test_data.collate_fn)
 
 	print('Start training')
-	args['num_labels'] = 32 # bug in model checkpoint
-	interpreter = pyramid_interpreter(args['num_labels'], args['dropout']).cuda()
+	interpreter = pyramid_interpreter(32, args['dropout']).cuda()
 	interpreter.init_weights()
 	criterion = nn.MSELoss()
 	optimizer = optim.AdamW(list(interpreter.parameters())
@@ -119,7 +118,7 @@ def main(args):
 
 			loss = 0.
 			for i in range(len(aus)):
-				loss += weights[i]*criterion(heatmaps_pred[:,i,:,:], heatmaps[:,i,:,:])
+				loss += criterion(heatmaps_pred[:,i,:,:], heatmaps[:,i,:,:])
 			loss /= len(aus)
 
 			optimizer.zero_grad()
@@ -129,8 +128,8 @@ def main(args):
 											+list(pspencoder.parameters()), 0.1)
 			optimizer.step()
 
-			total_loss += loss.item()*batch_size*args['dim'][0]*args['dim'][1]
-			total_sample += batch_size*args['dim'][0]*args['dim'][1]
+			total_loss += loss.item()*batch_size
+			total_sample += batch_size
 
 		avg_loss = total_loss / total_sample
 		print('** Epoch {}/{} loss {:.6f} **'.format(epoch+1, args['num_epochs'], avg_loss))
@@ -154,7 +153,7 @@ def main(args):
 	interpreter.load_state_dict(checkpoint['interpreter'])
 	g_all.load_state_dict(checkpoint['g_all'])
 	pspencoder.load_state_dict(checkpoint['pspencoder'])
-	test_f1, test_f1_list = val(interpreter, test_loader, pspencoder, g_all, upsamplers, args)
+	best_f1, best_f1_list = val(interpreter, test_loader, pspencoder, g_all, upsamplers, args)
 
 	print('Test avg F1: {:.2f}'.format(best_f1))
 	for i in range(args['num_labels']):
