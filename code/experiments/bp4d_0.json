@@ -4,7 +4,7 @@
   "dataset": "BP4D",
   "dim": 128,
   "num_labels": 12,
-  "num_epochs": 0,
+  "num_epochs": 15,
   "learning_rate": 5e-5,
   "weight_decay": 5e-4,
   "sigma": 20.0,
