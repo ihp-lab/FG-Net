@@ -36,7 +36,7 @@ This is the official implementation of our WACV 2024 Algorithm Track paper: FG-N
 FG-Net extracts feature maps from a StyleGAN2 model pre-trained on a large and diverse face image dataset. Then, these features are used to detect AUs with a Pyramid CNN Interpreter, making the training efficient and capturing essential local features. The proposed FG-Net achieves a strong generalization ability for heatmap-based AU detection thanks to the generalizable and semantic-rich features extracted from the pre-trained generative model. Extensive experiments are conducted to evaluate within- and cross-corpus AU detection with the widely-used DISFA and BP4D datasets. Compared with the state-of-the-art, the proposed method achieves superior cross-domain performance while maintaining competitive within-domain performance. In addition, FG-Net is dataefficient and achieves competitive performance even when trained on 1000 samples.
 
 <p align="center">
-  <img src="https://github.com/ihp-lab/FG-Net/blob/main/pipeline.png" width="350px" />
+  <img src="https://github.com/ihp-lab/FG-Net/blob/main/pipeline.png" width="700px" />
 </p>
 
 ## Installation
