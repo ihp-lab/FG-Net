@@ -90,7 +90,7 @@ StyleGAN2 Encoder:
 [pSp encoder](https://drive.google.com/file/d/1bMTNWkh5LArlaWSc_wa8VKyq2V42T2z0/view?pli=1). Rename the pt file to `encoder.pt`.
 
 AU detection:
-[BP4D](https://drive.google.com/drive/folders/12DO2tH75irU0s2G8sfl1_TMOCmk2LN2W?usp=drive_link) and [DISFA](https://drive.google.com/drive/folders/1519Jbw449A1jUaJSEa6mtR9lHzCzZuNC?usp=drive_link)
+[BP4D](https://drive.google.com/file/d/1mwOq1gceGTKvcxN0EJywY9VTuXvASgUZ/view?usp=sharing) and [DISFA](https://drive.google.com/file/d/1wTeqUNkhi-ONXXFJ4K6AozyOxyHTHog-/view?usp=sharing)
 
 Put all checkpoints under the folder `/code/checkpoints`.
 
@@ -106,6 +106,13 @@ CUDA_VISIBLE_DEVICES=1 python train_interpreter.py --exp experiments/disfa_0.jso
 cd code
 CUDA_VISIBLE_DEVICES=0 python eval_interpreter.py --exp experiments/eval_b2d.json
 CUDA_VISIBLE_DEVICES=1 python eval_interpreter.py --exp experiments/eval_d2b.json
+```
+
+## Singe image inference
+```
+cd code
+CUDA_VISIBLE_DEVICES=0 python single_image_inference.py --exp experiments/single_image_inference_bp4d.json
+CUDA_VISIBLE_DEVICES=1 python single_image_inference.py --exp experiments/single_image_inference_disfa.json
 ```
 
 ## License

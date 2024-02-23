@@ -1,0 +1,10 @@
+{
+  "dataset": "BP4D",
+  "dim": 128,
+  "num_labels": 12,
+  "stylegan_checkpoint": "checkpoints/stylegan2-ffhq-config-f.pt",
+  "style_encoder_path": "checkpoints/encoder.pt",
+  "checkpoint_path": "checkpoints/bp4d_0/model.pth",
+  "dropout": 0.1,
+  "seed": 0
+}
