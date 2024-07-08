@@ -108,7 +108,7 @@ CUDA_VISIBLE_DEVICES=0 python eval_interpreter.py --exp experiments/eval_b2d.jso
 CUDA_VISIBLE_DEVICES=1 python eval_interpreter.py --exp experiments/eval_d2b.json
 ```
 
-## Singe image inference
+## Single image inference
 ```
 cd code
 CUDA_VISIBLE_DEVICES=0 python single_image_inference.py --exp experiments/single_image_inference_bp4d.json
